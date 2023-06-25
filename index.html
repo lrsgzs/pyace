@@ -3,25 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>IDE</title>
-        <script src="/static/js/ace.min.js"></script>
-        <script src="/static/js/mode-python.min.js"></script>
-        <script src="/static/js/theme-monokai.min.js"></script>
-        <script src="/static/js/theme-xcode.min.js"></script>
-        <script src="/static/js/python.min.js"></script>
-        <script src="/static/js/ext-searchbox.min.js"></script>
-        <script src="/static/js/ext-language_tools.min.js"></script>
-        <script src="/static/js/ext-beautify.min.js"></script>
-        <script src="/static/js/jquery-3.6.0.min.js"></script>
+        <script src="./ace.min.js"></script>
+        <script src="./mode-python.min.js"></script>
+        <script src="./theme-monokai.min.js"></script>
+        <script src="./theme-xcode.min.js"></script>
+        <script src="./python.min.js"></script>
+        <script src="./ext-searchbox.min.js"></script>
+        <script src="./ext-language_tools.min.js"></script>
+        <script src="./ext-beautify.min.js"></script>
+        <script src="./jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <button onclick="ghzt()" style="height: 20px">白天/黑夜</button>
-        <button onclick="save()" style="height: 20px">保存到计算机</button>
-        <a href="/static/py/save_file.py" target="_blank" download="save_file.py" id="save_a"></a>
         <pre id="content" style="height: 50px"></pre>
         <textarea name="code" id="code" class="code">print("Hello World!")</textarea>
         <script>
-$('a[id=save_a]').hide()
-
 var codek = document.getElementById("code");
 var codes = codek.innerHTML;
 
