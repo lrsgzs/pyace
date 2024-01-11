@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <title>IDE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="./ace.min.js"></script>
-        <script src="./mode-python.min.js"></script>
-        <script src="./theme-monokai.min.js"></script>
-        <script src="./theme-xcode.min.js"></script>
-        <script src="./python.min.js"></script>
-        <script src="./ext-searchbox.min.js"></script>
-        <script src="./ext-language_tools.min.js"></script>
-        <script src="./ext-beautify.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/ace.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/mode-python.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/theme-monokai.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/theme-xcode.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/snippets/python.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/ext-language_tools.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/ext-language_tools.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/ace/1.24.2/ext-beautify.min.js"></script>
         <script src="./jquery-3.6.0.min.js"></script>
     </head>
     <body>
@@ -75,6 +75,11 @@ window.onclose = function () {
     if (confirm("确认关闭？可能会丢失数据！")) {
         window.close()
     }
+}
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+{
+    ghzt()
 }
         </script>
     </body>
