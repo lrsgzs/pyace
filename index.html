@@ -16,6 +16,7 @@
     </head>
     <body>
         <button onclick="ghzt()" style="height: 20px">白天/黑夜</button>
+        <button onclick="chzt()" style="height: 20px">修改主题</button>
         <pre id="content" style="height: 50px"></pre>
         <textarea name="code" id="code" class="code">print("Hello World!")</textarea>
         <script>
@@ -43,24 +44,25 @@ editor.getSession().on('change', function(){
   textarea.val(editor.getSession().getValue());
 });
 
-document.body.style.cssText = "background-color: white;"
+document.body.style.cssText = "background-color: white;";
 
 var ztnum = 1;
 function ghzt(){
-    if (ztnum === 1){
+    if (ztnum === 1) {
         ztnum = 2;
         editor.setTheme('ace/theme/monokai');
         document.body.style.cssText = "background-color: grey;"
-    }else{
+    } else {
         ztnum = 1;
         editor.setTheme('ace/theme/xcode');
         document.body.style.cssText = "background-color: white;"
     }
 }
-
-function save(){
-    $.post("/save", {"codes": editor.getValue()})
-    document.getElementById("save_a").click()
+function chzt() {
+    editor.setTheme(prompt("输入主题", editor.getTheme()));
+}
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    ghzt();
 }
 
 var ch;
@@ -71,15 +73,8 @@ $(window).resize(function (){
 ch = document.documentElement.clientHeight;
 document.getElementById("content").style.cssText = "height: " + (ch - 54) + "px";
 
-window.onclose = function () {
-    if (confirm("确认关闭？可能会丢失数据！")) {
-        window.close()
-    }
-}
-
-if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-{
-    ghzt()
+window.onbeforeunload = function(e) {
+	return '确定离开此页吗？'; 
 }
         </script>
     </body>
